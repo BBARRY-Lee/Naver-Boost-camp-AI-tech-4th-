@@ -31,7 +31,7 @@
 
 - 모듈을 모아놓은 단위, 하나의 프로그램
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%201.png)
+![Untitled 1](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%201.png)
 
 ### 1-4. Module 만들기
 
@@ -114,11 +114,11 @@ print(response.read())
 
 1) 기능들을 세부적으로 나눠 폴더로 만듦
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%202.png)
+![Untitled 2](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%202.png)
 
 2) 각 폴더별로 필요한 모듈을 구현함
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%203.png)
+![Untitled 3](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%203.png)
 
 ```python
 # echo.py
@@ -128,7 +128,7 @@ print ("echo {} number start".format(echo_number))
 
 3) 1차 Test –python shell
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%204.png)
+![Untitled 4](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%204.png)
 
 4) 폴더별로__init__.py 구성하기
 
@@ -145,7 +145,7 @@ from . import stage
 from . import sound
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%205.png)
+![Untitled 5](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%205.png)
 
 5) **main**.py 파일만들기
 
@@ -162,7 +162,7 @@ if **name** == '**main**':
 	show_character()
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%206.png)
+![Untitled 6](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%206.png)
 
 ### 2-2. package namespace
 
@@ -176,9 +176,9 @@ from **..sound.echo import** echo_test() # .. 부모 디렉토리 기준
 
 6) 실행하기–패키지이름만으로호출하기
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%207.png)
+![Untitled 7](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%207.png)
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%208.png)
+![Untitled 8](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%208.png)
 
 ## 3. 오픈소스 라이브러리 사용하기
 
@@ -190,7 +190,7 @@ ex) 웹 프로젝트, 데이터 분석 프로젝트, 각각 패키지 관리할 
 - 다양한 패키지 관리 도구를 사용함
 - 대표적인 도구 `**virtualenv**`와 `**conda**`가 있음
     
-    ![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%209.png)
+    ![Untitled 9](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%209.png)
     
 
 ### 3-2. conda 가상환경
@@ -199,7 +199,7 @@ ex) 웹 프로젝트, 데이터 분석 프로젝트, 각각 패키지 관리할 
 conda create -n my_project python=3.8
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2010.png)
+![Untitled 10](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2010.png)
 
 - 가상환경호출
 
@@ -207,7 +207,7 @@ conda create -n my_project python=3.8
 conda activate my_project
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2011.png)
+![Untitled 11](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2011.png)
 
 - 가상환경해제
 
@@ -223,7 +223,7 @@ conda install <패키지명>
 conda install matplotlib
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2012.png)
+![Untitled 12](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2012.png)
 
 - Windows에서는 conda
 - linux, mac에서는conda or pip
@@ -242,7 +242,7 @@ conda install matplotlib
     conda install tqdm
     ```
     
-    ![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2013.png)
+    ![Untitled 13](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2013.png)
     
 
 ```python
@@ -252,7 +252,7 @@ plt.ylabel('some numbers')
 plt.show()
 ```
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2014.png)
+![Untitled 14](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2014.png)
 
 ```python
 from tqdm import tqdm
