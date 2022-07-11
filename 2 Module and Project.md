@@ -23,15 +23,15 @@
 - Built-in Module인 Random을 사용,
 난수를 쉽게 생성할 수 있음
     
-    
+    ![Untitled](https://user-images.githubusercontent.com/99329555/178192458-38eee897-8973-4337-80ca-a24557bcc045.png)
 
-![Untitled](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled.png)
 
 ### 1-3. 패키지
 
 - 모듈을 모아놓은 단위, 하나의 프로그램
 
-![Untitled 1](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%201.png)
+![Untitled 1](https://user-images.githubusercontent.com/99329555/178192502-a2ae45ef-5e32-4198-8337-767d1cf30f5c.png)
+
 
 ### 1-4. Module 만들기
 
@@ -114,11 +114,14 @@ print(response.read())
 
 1) 기능들을 세부적으로 나눠 폴더로 만듦
 
-![Untitled 2](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%202.png)
+
+![Untitled 2](https://user-images.githubusercontent.com/99329555/178192519-ac1e5201-67c7-49b1-a0ab-ab3e4990f345.png)
+
 
 2) 각 폴더별로 필요한 모듈을 구현함
 
-![Untitled 3](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%203.png)
+
+![Untitled 3](https://user-images.githubusercontent.com/99329555/178192527-a1c087a7-b95e-431c-9f33-c8c9acba7e30.png)
 
 ```python
 # echo.py
@@ -127,8 +130,10 @@ print ("echo {} number start".format(echo_number))
 ```
 
 3) 1차 Test –python shell
+![Untitled 4](https://user-images.githubusercontent.com/99329555/178192533-79da8aa5-0c80-47c1-8b1e-52514bdfabb9.png)
 
-![Untitled 4](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%204.png)
+
+
 
 4) 폴더별로__init__.py 구성하기
 
@@ -145,7 +150,8 @@ from . import stage
 from . import sound
 ```
 
-![Untitled 5](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%205.png)
+![Untitled 5](https://user-images.githubusercontent.com/99329555/178192555-34337c3f-79b3-4758-bb92-483fa5c8bc09.png)
+
 
 5) **main**.py 파일만들기
 
@@ -162,7 +168,9 @@ if **name** == '**main**':
 	show_character()
 ```
 
-![Untitled 6](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%206.png)
+![Untitled 6](https://user-images.githubusercontent.com/99329555/178192600-dac828e3-0a22-4e8b-adce-95f725ab7301.png)
+
+
 
 ### 2-2. package namespace
 
@@ -175,10 +183,10 @@ from **..sound.echo import** echo_test() # .. 부모 디렉토리 기준
 ```
 
 6) 실행하기–패키지이름만으로호출하기
+![Untitled 7](https://user-images.githubusercontent.com/99329555/178192617-b4dbf3b0-deaf-473e-b6c4-445955157d31.png)
+![Untitled 8](https://user-images.githubusercontent.com/99329555/178192620-0c5d1354-ab5a-4511-be37-df979d235c4a.png)
 
-![Untitled 7](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%207.png)
 
-![Untitled 8](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%208.png)
 
 ## 3. 오픈소스 라이브러리 사용하기
 
@@ -190,7 +198,8 @@ ex) 웹 프로젝트, 데이터 분석 프로젝트, 각각 패키지 관리할 
 - 다양한 패키지 관리 도구를 사용함
 - 대표적인 도구 `**virtualenv**`와 `**conda**`가 있음
     
-    ![Untitled 9](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%209.png)
+![Untitled 9](https://user-images.githubusercontent.com/99329555/178192627-0c33c03f-09f5-4c33-8946-a16d606ba97b.png)
+
     
 
 ### 3-2. conda 가상환경
@@ -198,16 +207,18 @@ ex) 웹 프로젝트, 데이터 분석 프로젝트, 각각 패키지 관리할 
 ```bash
 conda create -n my_project python=3.8
 ```
+![Untitled 10](https://user-images.githubusercontent.com/99329555/178192638-cc83ef0f-ec81-4206-bd83-2bed69015ce2.png)
 
-![Untitled 10](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2010.png)
+
 
 - 가상환경호출
 
 ```bash
 conda activate my_project
 ```
+![Untitled 11](https://user-images.githubusercontent.com/99329555/178192650-82959b1d-1137-423c-9ceb-5ed3b33f4100.png)
 
-![Untitled 11](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2011.png)
+
 
 - 가상환경해제
 
@@ -222,8 +233,9 @@ conda install <패키지명>
 # 설치하고자하는 패키지명 입력
 conda install matplotlib
 ```
+![Untitled 12](https://user-images.githubusercontent.com/99329555/178192661-b40836aa-3720-4f4f-812e-9935205041bf.png)
 
-![Untitled 12](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2012.png)
+
 
 - Windows에서는 conda
 - linux, mac에서는conda or pip
@@ -241,8 +253,8 @@ conda install matplotlib
     conda install matplotlib
     conda install tqdm
     ```
-    
-    ![Untitled 13](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2013.png)
+    ![Untitled 13](https://user-images.githubusercontent.com/99329555/178192678-f6b516f0-1315-4f7d-8b26-854add4baafa.png)
+
     
 
 ```python
@@ -252,7 +264,8 @@ plt.ylabel('some numbers')
 plt.show()
 ```
 
-![Untitled 14](2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2014.png)
+![Untitled 14](https://user-images.githubusercontent.com/99329555/178192687-0b93c392-a5a9-4fde-a1dc-26eca519316a.png)
+
 
 ```python
 from tqdm import tqdm
