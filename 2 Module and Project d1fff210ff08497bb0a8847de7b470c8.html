@@ -1,0 +1,759 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2. Module and Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="00db522a-39c2-4c7d-a06c-d3b436bbdd2d" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📈</span></div><h1 class="page-title">2. <strong><strong>Module and Project</strong></strong></h1></header><div class="page-body"><h3 id="b266c961-f145-4fc3-bcf8-450b6614228d" class=""><details open=""><summary><mark class="highlight-orange_background">학습목표</mark></summary></details></h3><div class="indented"><ul id="c64c7738-a78d-4142-ae4a-29b05ecff67d" class="bulleted-list"><li style="list-style-type:disc">파이썬 프로젝트의 기본이 되는 <strong>모듈</strong>과 <strong>패키지</strong>, 그리고 <strong>프로젝트</strong>의 개념</li></ul><ul id="6ebab711-aa1c-4f85-9a9f-e9b724d6af0e" class="bulleted-list"><li style="list-style-type:disc">모듈과 패키지를 구성하고, 실제로 다른 개발자가 만든 모듈을 사용하는 방법</li></ul></div><h3 id="7fa03792-490a-4b48-8d6e-55ace5148bdf" class=""><details open=""><summary><mark class="highlight-orange_background">목차</mark></summary></details></h3><div class="indented"><nav id="a6a80124-4295-4521-a028-aa1e04b35f89" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#b266c961-f145-4fc3-bcf8-450b6614228d"><mark class="highlight-orange_background">학습목표</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7fa03792-490a-4b48-8d6e-55ace5148bdf"><mark class="highlight-orange_background">목차</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9e705246-b54f-44ed-9577-042e9e50f233"><mark class="highlight-orange_background">1. Module</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#84eea54e-53ea-42e3-aaa7-c2c9629385e4">1-1. <mark class="highlight-orange_background">Module overview</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#41eebf5e-4299-4a73-8af5-498795169bb6">1-2. <mark class="highlight-orange_background">Module in Python</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#21a8bb09-9ae2-421e-868b-8e7d0e59339a">1-3. <mark class="highlight-orange_background">패키지</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6c67df11-d640-4dc2-81a5-49d2ddc96faf">1-4. <mark class="highlight-orange_background">Module 만들기</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#404be029-f9e0-4271-a9df-d7b1af436d73">1-5. <mark class="highlight-orange_background">namespace</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1c42467e-03fa-4aab-a0b2-4267be1fc1d0">1-6. <mark class="highlight-orange_background">Built-in Modules</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#aca34ed9-0032-433a-8da9-87d19d3846c5"><mark class="highlight-orange_background">2. package</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7ad0a382-8af3-40f7-910a-44973be3372a">2-1. <mark class="highlight-orange_background">Package 만들기</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d6b98efa-c637-43ca-a2c5-b657abac713a">2-2. <mark class="highlight-orange_background">package namespace</mark></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#2e5dd936-cf4f-4f4c-b8ed-7ad918922a4c"><mark class="highlight-orange_background">3. 오픈소스 라이브러리 사용하기</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8a336ec8-6bff-4bcd-bf0b-d0af840f67d6">3-1. <mark class="highlight-orange_background">가상환경 설정하기 (Virtual Environment)</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7ec2948d-694b-4948-b768-f942bfc29a12">3-2. <mark class="highlight-orange_background">conda 가상환경</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1efde0d8-42f8-49bb-8711-6dd367ac50c1">3-3. <mark class="highlight-orange_background">패키지 설치</mark></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3d67b8c2-4425-4da9-8e07-2ddf0d4cde0e">3-4. <mark class="highlight-orange_background">Conda 가상환경 예시</mark></a></div></nav><p id="8f747e6b-1ad2-40cd-bb4a-64b5e004153b" class="">
+</p></div><hr id="da803763-a14b-43c3-9fad-79b33e142917"/><p id="4880ec61-1ade-4175-9246-de1277b0f3ff" class="">
+</p><h2 id="9e705246-b54f-44ed-9577-042e9e50f233" class=""><mark class="highlight-orange_background">1. Module</mark></h2><h3 id="84eea54e-53ea-42e3-aaa7-c2c9629385e4" class="">1-1. <mark class="highlight-orange_background">Module overview</mark></h3><ul id="95cbf8f3-db0b-4dd2-925c-05e9342af3a9" class="bulleted-list"><li style="list-style-type:disc">파이썬은 대부분의 라이브러리가 이미 다른 사용자에 의해서 구현되어 있음</li></ul><ul id="71d3dc19-a068-4606-9849-cb8b83440ec7" class="bulleted-list"><li style="list-style-type:disc">프로그램에서는 작은 프로그램 조각들, 모듈들을 모아 하나의 큰 프로그램을 개발함</li></ul><ul id="2426ab98-9a97-451c-8a55-ce0990bfa7ba" class="bulleted-list"><li style="list-style-type:disc">프로그램을 모듈화 시키면 다른 프로그램이 사용하기 쉬움
+예) 카카오톡 게임을 위한 카카오톡 접속 모듈</li></ul><p id="7386a84a-7b4c-40c3-90ac-dea21487465e" class="">
+</p><h3 id="41eebf5e-4299-4a73-8af5-498795169bb6" class="">1-2. <mark class="highlight-orange_background">Module in Python</mark></h3><div id="0849398a-2dd3-43d8-9b10-c83541e1162b" class="column-list"><div id="6ba05b11-f53e-44d9-a63c-dd5fc44f0ac2" style="width:50%" class="column"><ul id="f0d15e50-1f02-4f37-888c-fcc9dd3a43d9" class="bulleted-list"><li style="list-style-type:disc">Built-in Module인 Random을 사용,
+난수를 쉽게 생성할 수 있음<p id="c867a742-6a2c-451f-a6f2-c0e2974f5b8d" class="">
+</p></li></ul></div><div id="462a93d6-1646-4150-b19d-c7847060f1aa" style="width:50%" class="column"><figure id="d1fff210-ff08-497b-b0a8-847de7b470c8" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled.png"><img style="width:240px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled.png"/></a></figure></div></div><p id="5085c378-6ee9-4300-97fe-cf789aa5a565" class="">
+</p><h3 id="21a8bb09-9ae2-421e-868b-8e7d0e59339a" class="">1-3. <mark class="highlight-orange_background">패키지</mark></h3><ul id="7f1630e3-ca90-4bc2-8587-43f0ee4373f2" class="bulleted-list"><li style="list-style-type:disc">모듈을 모아놓은 단위, 하나의 프로그램</li></ul><figure id="0d0f4fbe-2f21-4d62-904f-337714190a82" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%201.png"><img style="width:624px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%201.png"/></a></figure><p id="fc853639-5644-4951-b626-094cda659660" class="">
+</p><h3 id="6c67df11-d640-4dc2-81a5-49d2ddc96faf" class="">1-4. <mark class="highlight-orange_background">Module 만들기</mark></h3><ul id="9493f8fb-c39f-4027-baae-56641c9f283c" class="bulleted-list"><li style="list-style-type:disc">파이썬의 Module == py 파일을 의미</li></ul><ul id="5af06cc6-f256-425d-89f2-f72b0dedbbde" class="bulleted-list"><li style="list-style-type:disc">같은 폴더에 Module에 해당하는 .py 파일과 사용하는 .py을 저장한 후 import 문을 사용해서 module을 호출</li></ul><ul id="54780b87-9c8b-4162-8be4-8334e7879c1d" class="bulleted-list"><li style="list-style-type:disc"></li></ul><pre id="75eb9d14-54e8-448a-8886-d2b86891de90" class="code"><code>fah_converter.py
+def covert_c_to_f(celcius_value):
+	return celcius_value * 9.0 / 5 + 32
+
+module_ex.py
+import fah_converter
+
+print (&quot;Enter a celsius value: &quot;),
+celsius = float(input())
+fahrenheit = fah_converter.covert_c_to_f(celsius)
+print (&quot;That&#x27;s &quot;, fahrenheit, &quot; degrees Fahrenheit&quot;)</code></pre><p id="7c6fcc29-6fe3-47ce-8e57-1082b5786a3c" class="">
+</p><h3 id="404be029-f9e0-4271-a9df-d7b1af436d73" class="">1-5. <mark class="highlight-orange_background">namespace</mark></h3><ul id="50657b6c-a0f0-443f-ab8e-536fefcb84df" class="bulleted-list"><li style="list-style-type:disc">모듈을 호출할 때 범위 정하는 방법</li></ul><ul id="6d5f9bb3-cc81-490d-9df1-0d04fbd6d328" class="bulleted-list"><li style="list-style-type:disc">모듈 안에는 함수와 클래스 등이 존재 가능</li></ul><ul id="2524a61b-197b-4aef-b1d3-f68fdb660ece" class="bulleted-list"><li style="list-style-type:disc">필요한 내용만 골라서 호출 할 수 있음</li></ul><ul id="ee96e428-595a-437b-ac61-d70733fdc106" class="bulleted-list"><li style="list-style-type:disc">from 과 import 키워드를 사용함</li></ul><pre id="389c6bdb-f99f-4f47-94c5-feb74c1144d6" class="code"><code># Alias 설정하기 – 모듈명을 별칭으로 써서
+import fah_converter as fah
+print(fah.covert_c_to_f(41.6))
+# fah_converter를 fah라는 이름으로 그 안에 covert_c_to_f 함수를 쓴다
+
+# 모듈에서 특정 함수 또는 클래스만 호출하기
+from fah_converter import covert_c_to_f
+print(covert_c_to_f(41.6)) # covert_c_to_f 함수만 호출함
+
+# 모듈에서 모든 함수 또는 클래스를 호출하기
+from fah_converter import *
+print(covert_c_to_f(41.6)) #전체 호출</code></pre><p id="31291da8-e932-48fe-befe-bf01085e0e9b" class="">
+</p><h3 id="1c42467e-03fa-4aab-a0b2-4267be1fc1d0" class="">1-6. <mark class="highlight-orange_background">Built-in Modules</mark></h3><ul id="36c03b4e-83d4-424c-a3f8-0f89f6046c47" class="bulleted-list"><li style="list-style-type:disc">파이썬이 기본 제공하는 라이브러리</li></ul><ul id="07b3ff35-a985-41ff-9603-555862a691fb" class="bulleted-list"><li style="list-style-type:disc">문자처리, 웹, 수학 등 다양한 모듈이 제공됨</li></ul><ul id="512b0179-7a8e-4364-aa37-7cac5715ea47" class="bulleted-list"><li style="list-style-type:disc">별다른 조치없이 import 문으로 활용 가능</li></ul><pre id="2d83f056-7037-4447-b01e-c7ffb6d7af2f" class="code"><code>#난수
+import random
+print (random.randint (0,100)) # 0~100사이의 정수 난수를 생성
+print (random.random()) # 일반적인 난수 생성
+
+#시간
+import time
+print(time.localtime()) # 현재 시간 출력
+
+#웹
+import urllib.request
+response = urllib.request.urlopen(&quot;http://thetemlab.io&quot;)
+print(response.read())</code></pre><ul id="f32fb283-1b33-4fad-860a-8cc0cd7beb89" class="bulleted-list"><li style="list-style-type:disc">수 많은 파이썬 모듈은 어떻게 검색할 것인가?<ol type="1" id="f551eb7a-bf0c-4689-86ac-25aa3e9d0656" class="numbered-list" start="1"><li>구글신에게 물어본다</li></ol><ol type="1" id="0e2b08f0-e81b-457e-82f1-21ea94adcabb" class="numbered-list" start="2"><li>모듈을 import후 구글 검색 또는 Help 쓰기</li></ol><ol type="1" id="fccbc775-c099-43c8-b9e5-968848cc5dde" class="numbered-list" start="3"><li>공식 문서를 읽어본다 <a href="https://docs.python.org/3/library/">https://docs.python.org/3/library/</a></li></ol></li></ul><ul id="bbc8fa6a-e6cb-49d9-b667-3b32f9de9cfb" class="bulleted-list"><li style="list-style-type:disc">실습 : 1 부터 100까지 특정 난수를 뽑고 싶다!</li></ul><p id="245d7dcc-0556-4e94-8bf5-3833f28ecfb1" class="">
+</p><h2 id="aca34ed9-0032-433a-8da9-87d19d3846c5" class=""><mark class="highlight-orange_background">2. package</mark></h2><ul id="bf226b2f-b53e-4802-8270-04a86b8ca7b6" class="bulleted-list"><li style="list-style-type:disc">하나의 대형 프로젝트를 만드는 코드의 묶음
+- 다양한 모듈들의 합, 폴더로 연결됨</li></ul><ul id="58964558-a4d0-43e9-90d4-073a75ab4252" class="bulleted-list"><li style="list-style-type:disc">__init__ , <strong>main</strong> 등 키워드 파일명이 사용됨</li></ul><ul id="9f5aed64-a850-4aa5-b613-2892a64d0b04" class="bulleted-list"><li style="list-style-type:disc">다양한 오픈소스들이 모두 패키지로 관리됨</li></ul><p id="e27c2738-2781-44c4-ba0c-d3ab4fd74e31" class="">
+</p><h3 id="7ad0a382-8af3-40f7-910a-44973be3372a" class="">2-1. <mark class="highlight-orange_background">Package 만들기</mark></h3><div id="64b564a0-bdfc-4114-82e9-ddcd4a53cfa1" class="column-list"><div id="d93804c8-0f89-4637-976d-dc1e7ae8f941" style="width:50%" class="column"><p id="fc7c6404-b1eb-407e-969b-dbc8ffcb56d9" class="">1) 기능들을 세부적으로 나눠 폴더로 만듦</p></div><div id="3c046831-155e-4e26-9b42-9ba0a1aba716" style="width:50%" class="column"><figure id="58c6505c-0b8c-40d2-a6bd-30edd69a97f9" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%202.png"><img style="width:124px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%202.png"/></a></figure></div></div><p id="3010c377-d96d-4144-8370-ada6593fe53f" class="">2) 각 폴더별로 필요한 모듈을 구현함</p><figure id="367d2403-e12d-4959-a93b-0a359da59329" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%203.png"><img style="width:1189px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%203.png"/></a></figure><pre id="b458c013-93f5-413e-a753-f8eec74a0a8e" class="code"><code># echo.py
+def echo_play(echo_number):
+print (&quot;echo {} number start&quot;.format(echo_number))</code></pre><div id="13a65e84-4227-49ef-ae33-458e967c449e" class="column-list"><div id="f75931d8-59bb-42e6-9df8-2be6c711a18a" style="width:50%" class="column"><p id="46a18065-a1e4-40dd-bada-81a9d1588fe9" class="">3) 1차 Test –python shell</p><p id="746665ff-6899-4dda-8c74-1dbe3fd29b0b" class="">
+</p><p id="3222da65-5448-48a9-b96b-734f5c4077c0" class="">
+</p></div><div id="54e186a0-a245-4856-b0a2-37de5ba77aed" style="width:50%" class="column"><figure id="13539de2-b082-48b5-978a-ca5a33c2faf8" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%204.png"><img style="width:366px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%204.png"/></a></figure></div></div><p id="7a73442a-4557-4c11-900f-b148f337c39a" class="">4) 폴더별로__init__.py 구성하기</p><ul id="4803f312-9782-42fa-b554-13524fbd817c" class="bulleted-list"><li style="list-style-type:disc">현재 폴더가 패키지임을 알리는 초기화 스크립트</li></ul><ul id="ef5f3081-6298-4da9-82a6-eeceb49727f9" class="bulleted-list"><li style="list-style-type:disc">없을 경우 패키지로 간주하지 않음 (3.3+ 부터는 X)</li></ul><ul id="e5db2e75-fb3b-4964-ac2c-af223488cff1" class="bulleted-list"><li style="list-style-type:disc">하위 폴더와 py 파일(모듈)을 모두 포함함</li></ul><ul id="dc23d0d1-2a5e-4567-a8bc-4f7657dc61f0" class="bulleted-list"><li style="list-style-type:disc">import와 <strong>all</strong> keyword 사용</li></ul><div id="04d17f79-a826-4ff1-95ae-5596de8abce0" class="column-list"><div id="70022ffe-2444-4915-992d-6d601d508dcd" style="width:50%" class="column"><pre id="52692ee7-9177-42e8-8d55-af2b0eaaa694" class="code"><code>__all__= [&#x27;image&#x27;, &#x27;stage&#x27;, &#x27;sound&#x27;]
+
+from . import image
+from . import stage
+from . import sound</code></pre></div><div id="06694a0c-9078-4c27-ba47-03b6c66b12d0" style="width:50%" class="column"><figure id="98088f1d-b052-4b13-9015-c1cd59daf0cb" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%205.png"><img style="width:240px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%205.png"/></a></figure><p id="c1e33158-166f-482f-970f-cfd9ca2e7399" class="">
+</p></div></div><p id="5eeee14e-f59e-4aa1-afaa-dd3af5aa90b8" class="">5) <strong>main</strong>.py 파일만들기</p><div id="3a6bbcb2-df62-4251-90c3-dd9593750a2d" class="column-list"><div id="1d6113de-1bd9-4f84-81bb-cbd14d0dbae5" style="width:50%" class="column"><pre id="b70b0135-dc2b-4363-9e51-286b7160f703" class="code"><code>from stage.main import game_start
+from stage.sub import set_stage_level
+from image.character import show_character
+from sound.bgm import bgm_play
+
+if name == &#x27;main&#x27;:
+	game_start()
+	set_stage_level(5)
+	bgm_play(10)
+	show_character()</code></pre></div><div id="90edaa63-e50f-47bf-ba88-039fb0e087ca" style="width:50%" class="column"><figure id="522de08a-5d82-4f05-b54f-82cb4b9d0e8e" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%206.png"><img style="width:240px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%206.png"/></a></figure><p id="c51cc3f3-9a31-4097-86cc-a7493338653c" class="">
+</p></div></div><h3 id="d6b98efa-c637-43ca-a2c5-b657abac713a" class="">2-2. <mark class="highlight-orange_background">package namespace</mark></h3><ul id="8c5c3213-d23b-4981-98d4-b9d8617fbb50" class="bulleted-list"><li style="list-style-type:disc">Package 내에서 다른폴더의 모듈을 부를 때 상대참조로 호출하는 방법</li></ul><pre id="23cb8965-19a4-43b0-8086-a4695177b24d" class="code"><code>from game.graphic.render import render_test() # 절대참조
+from .render import render_test() # . 현재디렉토리기준
+from ..sound.echo import echo_test() # .. 부모 디렉토리 기준</code></pre><p id="39d4f24e-99d1-4dd9-8ae7-bc88adaf5faf" class="">
+</p><p id="fcd19fc4-c5ab-4e8a-a552-95caf812540b" class="">6) 실행하기–패키지이름만으로호출하기</p><div id="b23d8238-4266-4b5f-b410-d1edb5c52d33" class="column-list"><div id="254f17ec-7264-460d-b294-e188409c8695" style="width:62.5%" class="column"><figure id="867296c9-7bb9-4b76-8113-f4dfa1e7374f" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%207.png"><img style="width:384px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%207.png"/></a></figure></div><div id="c6efa434-f12a-4f84-b153-b7c153a36759" style="width:37.49999999999999%" class="column"><figure id="575e5ffd-0733-4023-83ad-264452bd0f1d" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%208.png"><img style="width:240px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%208.png"/></a></figure><p id="20f69442-1929-4479-b593-71d3ab0952a3" class="">
+</p></div></div><p id="f179ac27-e62e-4c8b-8c0e-6cab759643aa" class="">
+</p><h2 id="2e5dd936-cf4f-4f4c-b8ed-7ad918922a4c" class=""><mark class="highlight-orange_background">3. 오픈소스 라이브러리 사용하기</mark></h2><h3 id="8a336ec8-6bff-4bcd-bf0b-d0af840f67d6" class="">3-1. <mark class="highlight-orange_background">가상환경 설정하기 (Virtual Environment)</mark></h3><ul id="6f217f99-99fa-404d-9aca-06d0af28f17b" class="bulleted-list"><li style="list-style-type:disc">프로젝트 진행 시 필요한 패키지만 설치하는 환경</li></ul><ul id="8d56db7a-4efa-4f16-b2c2-07eb5a677964" class="bulleted-list"><li style="list-style-type:disc">기본 인터프리터 + 프로젝트 종류별 패키지 설치
+ex) 웹 프로젝트, 데이터 분석 프로젝트, 각각 패키지 관리할 수 있는 기능</li></ul><ul id="777a99c7-5777-4ddf-9197-810a5b617d16" class="bulleted-list"><li style="list-style-type:disc">다양한 패키지 관리 도구를 사용함</li></ul><ul id="8fa8ea6f-4de4-4eae-9a21-5c0e7c1a08bd" class="bulleted-list"><li style="list-style-type:disc">대표적인 도구 <strong><code>virtualenv</code></strong>와 <strong><code>conda</code></strong>가 있음<figure id="6ca04729-d2e5-413c-9076-3d6b0e89de4a" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%209.png"><img style="width:1010px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%209.png"/></a></figure></li></ul><p id="4570622a-a466-48b1-b80b-2b0dd8a450f8" class="">
+</p><h3 id="7ec2948d-694b-4948-b768-f942bfc29a12" class="">3-2. <mark class="highlight-orange_background">conda 가상환경</mark></h3><pre id="75a3dba1-cbe2-4995-a72c-0209632ffaae" class="code"><code>conda create -n my_project python=3.8</code></pre><figure id="9653ee98-4070-4afd-a34b-bc1d4d4f184c" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2010.png"><img style="width:1209px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2010.png"/></a></figure><p id="75273d11-c6a2-479a-8f19-70fd9d0af6e3" class="">
+</p><ul id="54343a3e-f7fa-4740-90df-f9f06bdf171c" class="bulleted-list"><li style="list-style-type:disc">가상환경호출</li></ul><pre id="cad11780-f715-4a9f-8a02-fe370398be83" class="code"><code>conda activate my_project</code></pre><figure id="4f51e0f7-56ee-460d-909d-57c0dacd0bfc" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2011.png"><img style="width:538px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2011.png"/></a></figure><p id="3a5330bb-8334-45ce-a6f0-35b5b7f4d45f" class="">
+</p><ul id="715529f7-c5ee-4117-b29f-b413b59b49f0" class="bulleted-list"><li style="list-style-type:disc">가상환경해제</li></ul><pre id="ccbd967d-76e2-4c24-a89d-ab122dd47d1f" class="code"><code>conda deactivate</code></pre><p id="c3f30be1-865e-4979-b621-c5489125e325" class="">
+</p><h3 id="1efde0d8-42f8-49bb-8711-6dd367ac50c1" class="">3-3. <mark class="highlight-orange_background">패키지 설치</mark></h3><pre id="4e822ec4-fc86-41b8-b49a-0f8538a8e05c" class="code"><code>conda install &lt;패키지명&gt;
+# 설치하고자하는 패키지명 입력
+conda install matplotlib</code></pre><figure id="246c0456-1283-4507-bdec-b332464ae411" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2012.png"><img style="width:996px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2012.png"/></a></figure><ul id="f66fff62-23a8-4807-b2c8-fd1654aa1b04" class="bulleted-list"><li style="list-style-type:disc">Windows에서는 conda </li></ul><ul id="eb317ea2-f606-412a-b9e1-6c0b51932208" class="bulleted-list"><li style="list-style-type:disc">linux, mac에서는conda or pip</li></ul><p id="ef802842-4c77-4e68-a982-e87569382aeb" class="">
+</p><h3 id="3d67b8c2-4425-4da9-8e07-2ddf0d4cde0e" class="">3-4. <mark class="highlight-orange_background">Conda 가상환경 예시</mark></h3><ul id="c554d9fc-9d10-4a90-9692-9100c06faef8" class="bulleted-list"><li style="list-style-type:disc"><strong><code>matplotlib</code></strong> 활용한 그래프 표시<ul id="01c02d3d-b60f-4958-a9fb-b0ef729b76ee" class="bulleted-list"><li style="list-style-type:circle">대표적인 파이썬 그래프 관리 패키지</li></ul><ul id="085bb2c7-0a9b-4341-99ec-3419fccc2168" class="bulleted-list"><li style="list-style-type:circle">엑셀과 같은 그래프들을 화면에 표시함</li></ul><ul id="94231fad-814c-42de-80a6-d329cf9767e1" class="bulleted-list"><li style="list-style-type:circle">다양한 데이터 분석 도구들과 함께 사용됨</li></ul><pre id="fb7a210f-ac10-4a5a-8d0f-02dac09daed4" class="code"><code>conda install &lt;패키지명&gt;
+# 설치하고자 하는 패키지명 입력
+conda install matplotlib
+conda install tqdm</code></pre><figure id="503eadf8-59cc-4f5c-9176-3e0656b2c79d" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2013.png"><img style="width:996px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2013.png"/></a></figure></li></ul><div id="f71d40c9-da19-47c0-8a75-b0ef4b3d533b" class="column-list"><div id="38a7a4b4-70d8-421d-81a1-3c4bb72284c6" style="width:50%" class="column"><pre id="8ea979ce-addb-40ce-add4-8267b8189982" class="code"><code>import matplotlib.pyplot as plt
+plt.plot([1,2,3,4])
+plt.ylabel(&#x27;some numbers&#x27;)
+plt.show()</code></pre></div><div id="230f48e4-3e7d-48d0-89a0-0d8a0658a12e" style="width:50%" class="column"><figure id="428154d9-cea2-468e-8177-94b43f0cebe0" class="image"><a href="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2014.png"><img style="width:800px" src="2%20Module%20and%20Project%20d1fff210ff08497bb0a8847de7b470c8/Untitled%2014.png"/></a></figure></div></div><pre id="02923434-1320-4465-be4c-1a885a1a5e83" class="code"><code>from tqdm import tqdm
+import time
+
+for i in tqdm(range(100000)):
+	if i % 1000 == 0:
+		time.sleep(1)</code></pre><p id="e51d749e-8393-4c49-9c65-8c7e70dfd8b8" class="">
+</p></div></article></body></html>
