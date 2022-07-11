@@ -1,14 +1,3 @@
-# 1. Python Object Oriented Programming (OOP)
-
-### 학습목표
-
-- **객체 지향 프로그래밍 언어**, **Object Oriented Programming(OOP) 학습**
-- OOP는 프로그래밍 언어를 배우는 데 있어서 매우 중요한 개념으로, 파이썬 자체도 OOP 형태로 구성되어 있기도 하지만, 파이썬 나오기 전에 대세 언어들이였던 **자바, C++, C#** 같은 언어들이 모두 OOP 기반의 언어들이다. OOP를 배우는 것은 이전에 우리가 if 문이나 loop문을 배우듯이 프로그래밍 언어를 배우는 데 있어 가장 기본적인 개념
-
-### 목차
-
----
-
 ## 1. 객체지향 프로그래밍 개요
 
 - `**객체**` : 실생활에서 일종의 물건으로 속성(Attribute)와 행동(Action)을 가짐
@@ -26,14 +15,11 @@
     팀 – 팀 이름, 팀 연고지, 팀소속 선수
 
 - OOP는 설계도에 해당하는 클래스(class)와 실제 구현체인 인스턴스(instance) 로 나눔
-    
-    ![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled.png)
-    
+    ![](https://velog.velcdn.com/images/leejy1373/post/6beda4ee-118e-4910-986f-46fc013640de/image.png)
 
 - OOP는 설계도에 해당하는 클래스(class)와 실제 구현체인 인스턴스(instance) 로 나눔
-    
-    ![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%201.png)
-    
+![](https://velog.velcdn.com/images/leejy1373/post/ecbd7575-b662-4fd1-a244-abe539b35377/image.png)
+
 
 ## 2. Objects in Python
 
@@ -52,7 +38,8 @@ class SoccerPlayer(object):
 
 ### 2-2. class 선언하기
 
-![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%202.png)
+![](https://velog.velcdn.com/images/leejy1373/post/df194af5-b875-4789-ab9b-329f201624ae/image.png)
+
 
 ### 2-3. Python naming rule
 
@@ -106,7 +93,8 @@ class SoccerPlayer(object):
 
 - Object 이름 선언과 함께 초기값 입력 하기
     
-    ![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%203.png)
+![](https://velog.velcdn.com/images/leejy1373/post/483eafa3-0427-4e32-acb8-93d9336e68fe/image.png)
+
     
 
 ### 2-8. Class 구현하기 in Python
@@ -141,7 +129,8 @@ print("현재 선수의 등번호는 :", jinhyun.back_number)
 
 ### 3-1. Class scheme
 
-![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%204.png)
+![](https://velog.velcdn.com/images/leejy1373/post/78a3c0c9-051f-431a-bd6e-36a56445450d/image.png)
+
 
 ### 3-2. Note class
 
@@ -206,7 +195,8 @@ def get_number_of_pages(self):
 
 - 부모클래스로 부터 속성과 method를 물려받을 자식 클래스를 생성하는 것
 
-![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%205.png)
+![](https://velog.velcdn.com/images/leejy1373/post/6d26b8dd-acd6-4c5b-b364-a0a6498066b2/image.png)
+
 
 ### 4-2. Inheritance example
 
@@ -241,7 +231,8 @@ class Employee(Person): # 부모 클래스 Person으로 부터 상속
 - Dynamic Typing 특성으로 인해 파이썬에서는 같은 부모클래스의 상속에서 주로 발생함
 - 중요한 OOP의 개념 그러나 너무 깊이 알 필요X
     
-    ![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%206.png)
+![](https://velog.velcdn.com/images/leejy1373/post/f7d808b1-d189-49b9-b505-00bcb82170b5/image.png)
+
     
     ```python
     class Animal:
@@ -451,16 +442,6 @@ return inner
 ```
 
 ```python
-@star
-@percent
-def printer(msg):
-	print(msg)
-printer("Hello")
-```
-
-![Untitled](1%20Python%20Object%20Oriented%20Programming%20(OOP)%20173725aa0b874122b43f37f997d3c5bd/Untitled%207.png)
-
-```python
 def generate_power(exponent):
 	def wrapper(f):
 		def inner(*args):
@@ -472,9 +453,4 @@ return wrapper
 @generate_power(2)
 def raise_two(n):
 	return n**2
-```
-
-```python
-print(raise_two(7))
->>> 562949953421312
 ```
